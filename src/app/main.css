@@ -1,0 +1,41 @@
+.top-area {
+  position: relative;
+  height: 221px;
+}
+
+.date-area{
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+
+.weather-area {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+
+.weather-summary  {
+  float: right;
+}
+
+.temp {
+  clear: both;
+  float: right;
+}
+
+.forecast {
+  clear: both;
+}
+
+.forecast-item {
+  margin-bottom: 10px;
+}
+
+
+.weibo-area {
+  padding: 0 50px;
+}
+.weibo-item {
+  margin-bottom: 10px;
+}

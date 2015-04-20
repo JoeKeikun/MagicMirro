@@ -1,0 +1,27 @@
+<div class="top-area">
+  <!-- 时间 -->
+  <div class="date-area">
+      <div class="date small dimmed">{{curDate | date:'dd MMMM yyyy'}}</div>
+      <div class="time">{{curDate | date:'HH:mm:ss'}}</div>
+  </div>
+
+  <!-- 天气 -->
+  <div class="weather-area">
+      <div class="weather-summary small dimmed">{{weatherPosition}},&nbsp;&nbsp;<i class="wi" ng-class="weatherIconCls"></i></div>
+      <div class="temp">{{weatherTemp}} <i class="wi wi-celsius"></i></div>
+      <div class="forecast xxsmall dimmed">
+        <div class="forecast-item" ng-repeat="fItem in weatherForecast">
+          {{fItem.date}}, {{fItem.low}}<i class="wi wi-celsius"></i>-{{fItem.high}}<i class="wi wi-celsius"></i>, {{fItem.text}}
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="center-area">
+  <div class="weibo-area xsmall">
+    <div class="weibo-item" ng-repeat="wItem in wbList">
+      {{wItem.title}}&nbsp;&nbsp;&nbsp;&nbsp;<span class="dimmed">{{wItem.date}}</span>
+    </div>
+  </div>
+</div>
