@@ -12,7 +12,7 @@ angular.module('magicMirro')
         // 天气位置
         $scope.weatherPosition = 'Unknow';
         // 天气温度
-        $scope.weatherIconCls = 'wi-cloud-refresh';
+        $scope.weatherIconCls = 'wi-refresh';
         // 天气图标
         $scope.weatherTemp = '-';
         // 天气预报
@@ -40,7 +40,7 @@ angular.module('magicMirro')
             date: '2015-4-20'
         }]
 
-        
+
 
         // 获取yahoo天气
         WeatherService.getWeather(function(response) {
@@ -60,14 +60,7 @@ angular.module('magicMirro')
                 $scope.weatherTemp = item.condition.temp;
 
                 // 天气图标
-                conditionT = item.condition.text.toLowerCase();
-                if (conditionT.indexOf('cloudy') !== -1) {
-                    $scope.weatherIconCls = 'wi-cloudy';
-                } else if (conditionT.indexOf('sunny') !== -1) {
-                    $scope.weatherIconCls = 'wi-day-sunny';
-                } else if (conditionT.indexOf('rain') !== -1) {
-                    $scope.weatherIconCls = 'wi-rain';
-                }
+                $scope.weatherIconCls = window.YAHOO_WEATHER_CODE[item.condition.code];
 
                 // 天气预报
                 $scope.weatherForecast = item.forecast;
